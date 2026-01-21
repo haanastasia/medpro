@@ -41,14 +41,12 @@ get_header();
             <!-- Изображение -->
             <?php if (has_post_thumbnail()): ?>
             <div class="doctor-image mb-4 col-12 col-md-4">
-                <a href="<?= esc_url(get_permalink()); ?>" title="<?= esc_attr(get_the_title()); ?>">
-                    <?php
-                        the_post_thumbnail('large', [
-                            'class' => 'img-fluid rounded',
-                            'alt'   => esc_attr(get_the_title())
-                        ]);
-                        ?>
-                </a>
+                <?php
+                    the_post_thumbnail('large', [
+                        'class' => 'img-fluid rounded',
+                        'alt'   => esc_attr(get_the_title())
+                    ]);
+                    ?>
             </div>
             <?php endif; ?>
 

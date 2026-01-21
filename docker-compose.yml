@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
     db:
-        image: mariadb:10.3.8
+        image: mysql:8.0
         container_name: medpro_db
         restart: always
         environment:
