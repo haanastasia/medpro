@@ -48,6 +48,9 @@ remove_action( 'wp_head', 'wp_generator' );
 remove_action( 'wp_head', 'wp_shortlink_wp_head' ); 
 remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
 
+// Предупреждения
+require_once get_template_directory() . '/inc/admin-notices.php';
+
 // Кастомные типы записей
 require_once get_template_directory() . '/inc/custom-post-types.php';
 
