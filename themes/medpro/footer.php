@@ -22,7 +22,7 @@
             <?php foreach ($specializations as $spec) : ?>
                 <li class="nav-item">
                     <a
-                        href="/doctors/?specialization=<?= esc_attr($spec->slug) ?>"
+                        href="<?= esc_url(get_post_type_archive_link('doctors')); ?>?specialization=<?= esc_attr($spec->slug) ?>"
                         class="nav-link link-dark px-2"
                     >
                         <?= esc_html($spec->name) ?>

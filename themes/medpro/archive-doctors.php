@@ -127,11 +127,11 @@ get_header();
                                 </h3>
 
                                 <?php
-                                        $specializations = get_the_terms(get_the_ID(), 'specialization');
-                                        if ($specializations && !is_wp_error($specializations)) :
-                                            $names = array_map(fn($s) => esc_html($s->name), $specializations);
-                                            $visible = array_slice($names, 0, 2);
-                                        ?>
+                                $specializations = get_the_terms(get_the_ID(), 'specialization');
+                                if ($specializations && !is_wp_error($specializations)) :
+                                    $names = array_map(fn($s) => esc_html($s->name), $specializations);
+                                    $visible = array_slice($names, 0, 2);
+                                ?>
                                 <div class="doctor-specialization mb-2">
                                     <small class="text-muted">
                                         <?= implode(', ', $visible); ?>
@@ -142,10 +142,10 @@ get_header();
 
                                 <div class="doctor-info mb-3">
                                     <?php
-                                            $experience = absint(get_post_meta(get_the_ID(), '_doctor_experience', true));
-                                            $price      = absint(get_post_meta(get_the_ID(), '_doctor_price_from', true));
-                                            $rating     = (float) get_post_meta(get_the_ID(), '_doctor_rating', true);
-                                            ?>
+                                    $experience = absint(get_post_meta(get_the_ID(), '_doctor_experience', true));
+                                    $price      = absint(get_post_meta(get_the_ID(), '_doctor_price_from', true));
+                                    $rating     = (float) get_post_meta(get_the_ID(), '_doctor_rating', true);
+                                    ?>
 
                                     <?php if ($experience) : ?>
                                     <small><strong>Стаж:</strong> <?= esc_html($experience); ?> лет</small><br>
